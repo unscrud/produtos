@@ -1,12 +1,23 @@
 package dev.unscrud.model;
 
+import com.opencsv.bean.CsvBindByName;
+
 import java.math.BigDecimal;
 
 public class Produto {
+  @CsvBindByName(column = "ProductId", required = true)
   private int id;
+
+  @CsvBindByName(column = "ProductName", required = true)
   private String name;
+
+  @CsvBindByName(column = "Description", required = true)
   private String description;
+
+  @CsvBindByName(column = "Price", required = true)
   private BigDecimal price;
+
+  @CsvBindByName(column = "Category", required = true)
   private String category;
 
   public int getId() {
@@ -47,5 +58,16 @@ public class Produto {
 
   public void setCategory(String category) {
     this.category = category;
+  }
+
+  @Override
+  public String toString() {
+    return "Produto{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", description='" + description + '\'' +
+            ", price=" + price +
+            ", category='" + category + '\'' +
+            '}';
   }
 }
