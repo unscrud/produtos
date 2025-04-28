@@ -14,12 +14,26 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>dynomakeRepository</id>
+            <url>https://maven.dynomake.space/releases</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.10</version>
+        </dependency>
+
+        <!-- https://github.com/dynomake/libretranslate-java -->
+        <dependency>
+            <groupId>space.dynomake</groupId>
+             <artifactId>libretranslate-java</artifactId>
+            <version>1.0.9</version>
         </dependency>
     </dependencies>
 </project>
