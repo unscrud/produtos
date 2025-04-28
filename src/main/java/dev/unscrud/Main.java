@@ -2,6 +2,7 @@ package dev.unscrud;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import dev.unscrud.model.Produto;
+import dev.unscrud.service.TraduzirProdutoService;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,5 +16,12 @@ public class Main {
             .withType(Produto.class).build().parse();
 
     produtos.forEach(System.out::println);
+
+    TraduzirProdutoService tradutorService = new TraduzirProdutoService();
+
+    produtos.stream().map(p -> {
+      tradutorService.traduzir(p);
+      return p;
+    }).forEach(System.out::println);
   }
 }
