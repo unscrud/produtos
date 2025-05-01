@@ -25,9 +25,8 @@ public class Main {
 
     TraduzirProdutoService tradutorService = new TraduzirProdutoService();
 
-    produtos.stream().map(p -> {
-      tradutorService.traduzir(p);
-      return p;
-    }).forEach(System.out::println);
+    produtos.stream()
+            .peek(tradutorService::traduzir)
+            .forEach(System.out::println);
   }
 }
